@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Date</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+			list-style-type: none;
+		}
+		body{
+			background-image: url("1.png");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.content{
+			width: 100%;
+			margin: 0px auto;
+			color: rgba(255,255,255,0.5);
+			background-image: url("Shape 7.png");
+		}
+		.header{
+			width: 100%;
+			text-align: center;
+		}
+		.menu1{
+			float: left;
+			width: 20px;
+			height: 20px;
+			padding: 1.5%;
+			border: 5px solid #7dbdca;
+			border-radius: 50%;
+			margin: 5%;
+		}
+		.january{
+			width: 60%;
+			margin: 0px auto;
+			font-family: 微软雅黑;
+			color: rgba(255,255,255,1);
+			font-size: 3em;
+			padding-top: 5%;
+			display: inline-block;
+			
+		}
+		.add{
+			float: right;
+			width: 20px;
+			height: 20px;
+			padding: 1.5%;
+			border: 5px solid #7dbdca;
+			border-radius: 50%;
+			margin: 5%;
+		}
+		.weekday ul{
+			width: 82%;
+			padding-top: 0px;
+			padding-left: 10%;
+			font-size: 2em;
+			font-family: 微软雅黑;
+			clear: both;
+		}
+		.weekday ul li{
+			width: 8%;
+			margin: 3%;
+			float: left;
+			color: rgba(255,255,255,1);
+			text-align: center;
+
+		}
+		.days .list{
+			margin-top: 20%;
+			color: rgba(255,255,255,1);
+			clear: both;
+		}
+		.days .list>li{
+			width: 100%;
+			font-size: 2.5em;
+			font-family: 微软雅黑;
+			text-align: center;
+			padding: 0px 8%;
+			clear: both;;
+		}
+		.days .list>li .child-list>li{
+			width: 8%;
+			margin: 2%;
+			float: left;
+		}
+		.days .list>li:first-child .child-list>li:nth-child(1){
+			color: rgba(255,255,255,0.5);
+		}
+		.days .list>li:first-child .child-list>li:nth-child(2){
+			color: rgba(255,255,255,0.5);
+		}
+		.days .list>li:first-child .child-list>li:nth-child(3){
+			color: rgba(255,255,255,0.5);
+		}
+		.days .list>li:first-child .child-list>li:nth-child(4){
+			color: rgba(255,255,255,0.5);
+		}
+	.days .list>li:first-child .child-list>li:nth-child(5){
+			color: rgba(255,255,255,0.5);
+		}
+		.days .list>li:first-child .child-list>li:nth-child(6){
+			color: rgba(255,255,255,0.5);
+		}
+		.days .list>li:last-child .child-list>li:nth-last-child(1){
+			color: rgba(255,255,255,0.5);
+		}
+		.days .list>li:last-child .child-list>li:nth-last-child(2){
+			color: rgba(255,255,255,0.5);
+		}
+		.days .list>li:last-child .child-list>li:nth-last-child(3){
+			color: rgba(255,255,255,0.5);
+		}
+		.days .list>li:last-child .child-list>li:nth-last-child(4){
+			color: rgba(255,255,255,0.5);
+		}
+		.days .list>li:last-child .child-list>li:nth-last-child(5){
+			color: rgba(255,255,255,0.5);
+		}
+		.task{
+			width: 100%;
+			clear: both;
+			position: relative;
+		}
+		.br{
+			background-color: rgba(255,255,255,0.5);
+			width: 92%;
+			padding: 4%;
+			clear: both;
+		}
+		.hen{
+			width: 20%;
+			margin: 0 auto;
+			border: 10px solid #a9a1c9;
+			border-radius: 10px;
+		}
+		.t09{
+			width: 80%;
+			padding: 5% 10%;
+			font-family: 微软雅黑;
+			font-size: 40px;
+			color: rgba(225,225,225,1);
+		}
+		.t10{
+			width: 80%;
+			padding: 5% 10%;
+			font-family: 微软雅黑;
+			font-size: 40px;
+			color: rgba(225,225,225,1);
+		}
+		.t14{
+			width: 80%;
+			padding: 5% 10%;
+			font-family: 微软雅黑;
+			font-size: 40px;
+			color: rgba(225,225,225,1);
+		}
+		.weekload{
+			width: 100%;
+			height: auto;
+			z-index: -1;
+			position: absolute;
+			bottom: -20%;
+			background-size:cover; 
+		}
+		@media  screen and (max-width: 640px) {
+			.menu1{
+				width: 20px;
+				height: 20px;
+				padding: 1%;
+				border: 3px solid #7dbdca;
+				margin: 2%;
+			}
+			.menu1>img{
+				width: 80%;
+			}
+			.january{
+				width: 60%;
+				margin: 0px auto;
+				font-family: 微软雅黑;
+				color: rgba(255,255,255,1);
+				font-size: 1em;
+				padding-top: 5%;
+				display: inline-block;
+				
+			}
+			.add{
+				width: 20px;
+				height: 20px;
+				padding: 1%;
+				border: 3px solid #7dbdca;
+				border-radius: 50%;
+				margin: 2%;
+			}
+			.add>img{
+				width: 80%;
+			}
+			.weekday ul{
+				font-size: 0.4em;
+			}
+			.days .list>li{
+				font-size: 0.9em;
+			}
+			.br{
+				padding: 2%;
+				width: 96%;
+			}
+			.hen{
+			border: 3px solid #a9a1c9;
+			}
+			.t10 {
+			        padding: 3% 10%;
+			        font-size: 17px;
+			    }
+
+		    .t09 {
+		        padding: 3% 10%;
+		        font-size: 17px;
+		    }
+
+		    .t14 {
+		        padding: 3% 10%;
+		        font-size: 17px;
+		    }
+		    .weekload{
+		    	position: fixed;
+		    	bottom: -5px;
+		    }
+		    @media screen and (min-width: 325px) and (max-width: 800px)
+		    {
+				.t10 {
+				        padding: 8% 10%;
+				        font-size: 17px;
+				    }
+
+			    .t09 {
+			        padding: 8% 10%;
+			        font-size: 17px;
+			    }
+
+			    .t14 {
+			        padding: 8% 10%;
+			        font-size: 17px;
+			    }
+				.weekday ul{
+					font-size: 0.7em;
+				}
+				.days .list>li{
+					font-size: 1.2em;
+				}
+		    	.weekload{
+		    	position: fixed;
+		    	bottom: -5px;
+		    }
+		    }
+		}
+
+	</style>
+</head>
+<body>
+<div class="content">
+	<div class="header">
+		<div class="menu1">
+			<img src="Shape 4 copy.png">
+		</div>
+		<div class="january">
+			January 2015
+		</div>
+		<div class="add">
+			<img src="Shape 4.png">
+		</div>
+	</div>
+	<div class="weekday">
+		<ul>
+			<li>Mo</li>
+			<li>Tu</li>
+			<li>We</li>
+			<li>Th</li>
+			<li>Fr</li>
+			<li>Sa</li>
+			<li>Su</li>
+		</ul>
+	</div>
+	<div class="days">
+		<ul class="list">
+			<li>
+				<ul class="child-list">
+					<li>26</li>
+					<li>27</li>
+					<li>28</li>
+					<li>29</li>
+					<li>30</li>
+					<li>31</li>
+					<li>1</li>
+				</ul>
+			</li>
+			<li>
+				<ul class="child-list">
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+					<li>7</li>
+					<li>8</li>
+				</ul>
+			</li>
+			<li>
+				<ul class="child-list">
+					<li>9</li>
+					<li>10</li>
+					<li>11</li>
+					<li>12</li>
+					<li>13</li>
+					<li>14</li>
+					<li>15</li>
+				</ul>
+			</li>
+			<li>
+				<ul class="child-list">
+					<li>16</li>
+					<li>17</li>
+					<li>18</li>
+					<li>19</li>
+					<li>20</li>
+					<li>21</li>
+					<li>22</li>
+				</ul>
+			</li>
+			<li>
+				<ul class="child-list">
+					<li>23</li>
+					<li>24</li>
+					<li>25</li>
+					<li>26</li>
+					<li>27</li>
+					<li>28</li>
+					<li>29</li>
+				</ul>
+			</li>
+			<li>
+				<ul class="child-list">
+					<li>30</li>
+					<li>31</li>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="task">
+		<div class="br">
+			<div class="hen"></div>
+		</div>
+		<div class="t09">
+			09:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Do Stuff
+		</div>
+		<div class="t10">
+			10:30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Do even more Stuff 
+		</div>
+		<div class="t14">
+			14:25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Do even more Stuff 
+		</div>
+		<div class="weekload">
+			<img src="Shape 10 copy 3.png" style="width: 100%;">
+		</div>
+	</div>
+</div>
+</body>
+</html>
